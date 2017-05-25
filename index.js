@@ -4,8 +4,9 @@ const bodyParser = require("body-parser");
 const winston = require("winston");
 const redis = require("redis");
 const fs = require("fs");
+const os = require('os');
 
-const CPUs = 2;
+const CPUs = os.cpus().length;
 const app = express();
 const sub = redis.createClient();
 const pub = redis.createClient();
